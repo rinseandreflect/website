@@ -14,7 +14,8 @@
             overflow: hidden; /* Prevent all scrolling */
             display: flex;
             flex-direction: column;
-            min-height: 100vh; /* Ensure body takes full viewport height */
+            height: 100vh; /* Ensure body takes full viewport height and padding is inclusive */
+            box-sizing: border-box; /* Include padding in height calculation */
             background-color: #1b1b1b;
             padding-top: var(--banner-height); /* Push content down by banner height */
         }
@@ -57,8 +58,8 @@
         }
 
         .content-area img {
-            max-width: 50vw; /* Revert to smaller size */
-            max-height: 50vh; /* Revert to smaller size */
+            max-width: 50vw; /* Revert to smaller size for proper centering within constrained space */
+            max-height: 50vh; /* Revert to smaller size for proper centering within constrained space */
             object-fit: contain; /* Preserve aspect ratio without cropping */
             display: block; /* Remove extra space below image */
         }
