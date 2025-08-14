@@ -6,18 +6,13 @@
     <title>Responsive Webpage</title>
     <style>
         html, body {
-            /* Removed height: 100%; */
+            height: 100%; /* Ensure html and body take full viewport height consistently */
         }
 
         body {
             margin: 0;
             overflow: hidden; /* Prevent all scrolling */
-            display: flex;
-            flex-direction: column;
-            height: 100vh; /* Ensure body takes full viewport height and padding is inclusive */
-            box-sizing: border-box; /* Include padding in height calculation */
             background-color: #1b1b1b;
-            padding-top: var(--banner-height); /* Push content down by banner height */
         }
 
         .banner {
@@ -49,8 +44,11 @@
         }
 
         .content-area {
-            /* Removed margin-top */
-            flex-grow: 1; /* Take up remaining vertical space */
+            position: absolute; /* Use absolute positioning for precise layout */
+            top: var(--banner-height); /* Position below banner */
+            bottom: 0; /* Span to bottom of viewport */
+            left: 0;
+            right: 0;
             display: flex;
             justify-content: center; /* Center horizontally */
             align-items: center; /* Center vertically */
@@ -58,8 +56,8 @@
         }
 
         .content-area img {
-            max-width: 50vw; /* Revert to smaller size for proper centering within constrained space */
-            max-height: 50vh; /* Revert to smaller size for proper centering within constrained space */
+            max-width: 50vw; /* Keep smaller size */
+            max-height: 50vh; /* Keep smaller size */
             object-fit: contain; /* Preserve aspect ratio without cropping */
             display: block; /* Remove extra space below image */
         }
