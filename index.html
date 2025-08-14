@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Webpage</title>
+    <style>
+        html, body {
+            /* Removed height: 100%; */
+        }
+
+        body {
+            margin: 0;
+            overflow: hidden; /* Prevent all scrolling */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensure body takes full viewport height */
+            background-color: #1b1b1b;
+            padding-top: var(--banner-height); /* Push content down by banner height */
+        }
+
+        .banner {
+            width: 100%;
+            position: fixed; /* Pin to the top */
+            top: 0;
+            left: 0;
+            z-index: 10; /* Ensure banner is above other content */
+            display: flex; /* To center the banner-inner */
+            justify-content: center; /* To center the banner-inner */
+            align-items: center; /* To center the banner-inner */
+        }
+
+        .banner-inner {
+            background-color: #111111; /* Background color for the bars */
+            width: 100%; /* Take full width of fixed banner */
+            padding: 2px 0; /* Vertical padding for the bars (further reduced) */
+            display: flex; /* To center the image */
+            justify-content: center; /* Center image horizontally */
+            align-items: center; /* Center image vertically */
+        }
+
+        .banner-inner img {
+            max-width: 100%; /* Responsive width */
+            height: auto; /* Maintain aspect ratio */
+            max-height: 10vh; /* Make pfp.png smaller (further reduced) */
+            object-fit: contain; /* Ensure the entire image is visible */
+            display: block; /* Remove extra space below image */
+        }
+
+        .content-area {
+            /* Removed margin-top */
+            flex-grow: 1; /* Take up remaining vertical space */
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            box-sizing: border-box; /* Include padding in element's total width and height */
+        }
+
+        .content-area img {
+            max-width: 50vw; /* Revert to smaller size */
+            max-height: 50vh; /* Revert to smaller size */
+            object-fit: contain; /* Preserve aspect ratio without cropping */
+            display: block; /* Remove extra space below image */
+        }
+    </style>
+</head>
+<body>
+    <header class="banner">
+        <div class="banner-inner">
+            <img src="pfp.png" alt="Banner Image">
+        </div>
+    </header>
+
+    <main class="content-area">
+        <img src="sitedown.png" alt="Main Content Image">
+    </main>
+
+    <script>
+        window.addEventListener('load', () => {
+            const banner = document.querySelector('.banner');
+            const bannerHeight = banner.offsetHeight;
+            document.documentElement.style.setProperty('--banner-height', `${bannerHeight}px`);
+        });
+
+        window.addEventListener('resize', () => {
+            const banner = document.querySelector('.banner');
+            const bannerHeight = banner.offsetHeight;
+            document.documentElement.style.setProperty('--banner-height', `${bannerHeight}px`);
+        });
+    </script>
+</body>
+</html>
