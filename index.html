@@ -3,89 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Webpage</title>
-    <style>
-        html, body {
-            height: 100%; /* Ensure html and body take full viewport height consistently */
-        }
-
-        body {
-            margin: 0;
-            overflow: hidden; /* Prevent all scrolling */
-            background-color: #1b1b1b;
-        }
-
-        .banner {
-            width: 100%;
-            position: fixed; /* Pin to the top */
-            top: 0;
-            left: 0;
-            z-index: 10; /* Ensure banner is above other content */
-            display: flex; /* To center the banner-inner */
-            justify-content: center; /* To center the banner-inner */
-            align-items: center; /* To center the banner-inner */
-        }
-
-        .banner-inner {
-            background-color: #111111; /* Background color for the bars */
-            width: 100%; /* Take full width of fixed banner */
-            padding: 2px 0; /* Vertical padding for the bars (further reduced) */
-            display: flex; /* To center the image */
-            justify-content: center; /* Center image horizontally */
-            align-items: center; /* Center image vertically */
-        }
-
-        .banner-inner img {
-            max-width: 100%; /* Responsive width */
-            height: auto; /* Maintain aspect ratio */
-            max-height: 10vh; /* Make pfp.png smaller (further reduced) */
-            object-fit: contain; /* Ensure the entire image is visible */
-            display: block; /* Remove extra space below image */
-        }
-
-        .content-area {
-            position: absolute; /* Use absolute positioning for precise layout */
-            top: var(--banner-height); /* Position below banner */
-            bottom: 0; /* Span to bottom of viewport */
-            left: 0;
-            right: 0;
-            display: flex;
-            justify-content: center; /* Center horizontally */
-            align-items: center; /* Center vertically */
-            box-sizing: border-box; /* Include padding in element's total width and height */
-        }
-
-        .content-area img {
-            max-width: 50vw; /* Keep smaller size */
-            max-height: 50vh; /* Keep smaller size */
-            object-fit: contain; /* Preserve aspect ratio without cropping */
-            display: block; /* Remove extra space below image */
-        }
-    </style>
+    <title>Rinse & Reflect</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="banner">
-        <div class="banner-inner">
-            <img src="pfp.png" alt="Banner Image">
+    <div class="top-logo-container">
+        <div class="logo-third-container">
+            <img src="logo.png" alt="Logo">
         </div>
-    </header>
+    </div>
 
-    <main class="content-area">
-        <img src="sitedown.png" alt="Main Content Image">
-    </main>
+    <section class="who-we-are">
+        <div class="container">
+            <h2>WHO WE ARE</h2>
+            <p>We’re a group of friends with a shared entrepreneurial spirit and a serious passion for cars. What started as a hobby quickly evolved into a mobile detailing business driven by quality, convenience, and customer satisfaction. Whether we’re pulling up to your driveway or welcoming you to our spot, we bring professional-grade detailing with nothing but the tools in our trunk. From daily drivers to weekend cruisers, we’re here to help your ride shine like it just rolled off the lot.</p>
+        </div>
+    </section>
 
-    <script>
-        window.addEventListener('load', () => {
-            const banner = document.querySelector('.banner');
-            const bannerHeight = banner.offsetHeight;
-            document.documentElement.style.setProperty('--banner-height', `${bannerHeight}px`);
-        });
+    <section class="services">
+        <div class="container">
+            <h2>WHAT WE DO</h2>
+            <div class="service-categories">
+                <div class="service-category">
+                    <h3>Exterior Detailing</h3>
+                    <ul>
+                        <li>Two-Bucket Hand Wash</li>
+                        <li>Bug & Tar Removal</li>
+                        <li>Iron Removal</li>
+                        <li>Tyre Dressing</li>
+                    </ul>
+                </div>
+                <div class="service-category">
+                    <h3>Interior Detailing</h3>
+                    <ul>
+                        <li>Vacuuming</li>
+                        <li>Window Maintenance</li>
+                        <li>Interior Wipe-Down & Protection</li>
+                        <li>Upholstery Treatment</li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+    </section>
 
-        window.addEventListener('resize', () => {
-            const banner = document.querySelector('.banner');
-            const bannerHeight = banner.offsetHeight;
-            document.documentElement.style.setProperty('--banner-height', `${bannerHeight}px`);
-        });
-    </script>
+    <section class="contact-us">
+        <div class="container">
+            <h2>CONTACT US</h2>
+            <div class="contact-info-box">
+                <p><a href="tel:+13053066434"><img src="call.png" alt="Call Us"></a></p>
+                <p><a href="mailto:book@rinsereflect.com"><img src="email.png" alt="Email Us"></a></p>
+                <p><a href="https://www.instagram.com/rinse.reflect" target="_blank"><img src="instagram.png" alt="Instagram"></a></p>
+                <p><a href="https://www.tiktok.com/@rinse.reflect" target="_blank"><img src="tiktok.png" alt="TikTok"></a></p>
+            </div>
+        </div>
+    </section>
+
+    
+    <script src="script.js"></script>
 </body>
 </html>

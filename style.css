@@ -1,0 +1,208 @@
+/* General Body Styles */
+body {
+    font-family: Georgia, serif; /* Using Georgia as the font */
+    margin: 0;
+    padding: 70px 0 0 0; /* Add padding-top to prevent content from hiding under fixed header */
+    background-color: #1e1e1e; /* Dark background - matching first section */
+    color: #f0f0f0; /* Light text color */
+    line-height: 1.6;
+    box-sizing: border-box; /* Include padding and border in element's total width */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styles */
+/* This section is intentionally left blank as the header was removed. */
+
+.top-logo-container {
+    display: flex;
+    justify-content: center; /* Center the entire group horizontally */
+    align-items: center;
+    height: 70px; /* Adjust height as needed */
+    background-color: #111111; /* Dark background */
+    padding: 0px 0; /* Remove padding as inner margins/widths will manage spacing */
+    width: 100%; /* Ensure it takes full width */
+    box-sizing: border-box; /* Include padding and border in element's total width */
+    position: fixed; /* Keep banner visible when scrolling */
+    top: 0;
+    z-index: 1000; /* Ensure it stays on top of other content */
+}
+
+.top-logo-container img {
+    max-height: 50px; /* Adjust logo size */
+    width: auto;
+    object-fit: contain;
+    /* No display: block; or margin: 0 auto; here; logo-third-container handles centering */
+}
+
+.spacer-outer-left {
+    /* flex: 1; /* Take up available space */ */
+}
+
+.spacer-right {
+    /* flex: 0.05; /* Make space even smaller */ */
+}
+
+.spacer-outer-right {
+    /* flex: 1; /* Take up available space */ */
+}
+
+.spacer {
+    /* Removed this rule as spacers are gone */
+}
+
+/* Button Styles */
+.btn {
+    display: inline-block;
+    background-color: #007bff; /* A prominent blue for calls to action */
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Who We Are Section */
+.who-we-are {
+    background-color: #1e1e1e; /* New color: slightly lighter dark grey */
+    padding: 15px 0; /* Reverted top padding */
+    text-align: center;
+}
+
+.who-we-are h2 {
+    font-size: 2.8em; /* Made titles bigger */
+    margin-bottom: 20px;
+    color: #f0f0f0;
+    font-family: "Times New Roman", serif;
+    font-weight: 400;
+}
+
+.who-we-are p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto 5px auto; /* Reverted space below paragraph box */
+    background-color: #222; /* Slightly darker background for the box */
+    padding: 20px; /* Padding inside the box */
+    border-radius: 8px; /* Rounded corners */
+    border: 1px solid #333; /* Border similar to service categories */
+}
+
+/* Services Section */
+.services {
+    background-color: #252525; /* Swapped with request-appointment color */
+    padding: 15px 0; /* Reverted top padding */
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 2.8em; /* Made titles bigger */
+    margin-bottom: 20px;
+    font-family: "Times New Roman", serif;
+    font-weight: 400;
+}
+
+.service-categories {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 5px; /* Reverted space below service categories */
+}
+
+.service-category {
+    background-color: #222;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    flex: 1;
+    min-width: 300px;
+    max-width: 45%;
+    text-align: left;
+}
+
+.service-category h3 {
+    color: #f0f0f0; /* Changed to match other text color */
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-family: "Times New Roman", serif;
+    font-size: 1.8em; /* Made titles bigger */
+    font-weight: normal;
+}
+
+.service-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.service-category ul li {
+    position: relative;
+    padding-left: 20px;
+    font-weight: normal;
+}
+
+.service-category ul li::before {
+    content: '\2022'; /* Bullet point */
+    color: #f0f0f0; /* Changed to match other text color */
+    position: absolute;
+    left: 0;
+}
+
+.logo-third-container {
+    display: flex; /* Keep as flex to center img internally */
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Ensure it takes full height of parent */
+    flex: none;
+}
+
+/* Contact Us Section */
+.contact-us {
+    background-color: #1e1e1e; /* Matching .who-we-are section background */
+    padding: 30px 0; /* Matching existing section padding */
+    text-align: center;
+}
+
+.contact-us h2 {
+    font-size: 1.8em; /* Made titles bigger */
+    margin-bottom: 20px; /* Remove bottom margin to reduce vertical space */
+    color: #f0f0f0;
+    font-family: "Times New Roman", serif;
+    font-weight: 400;
+}
+
+.contact-info-box {
+    
+    max-width: 800px;
+    margin: 0 auto 20px auto; /* Centered with bottom margin */
+    display: flex; /* Make children arrange horizontally */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Vertically align items */
+    gap: 10px; /* Space between items */
+}
+
+.contact-info-box p {
+    font-size: 1.2em;
+    line-height: 1.8;
+    margin: 0; /* Remove default paragraph margin to allow flex gap to control spacing */
+}
+
+.contact-info-box p a img {
+    width: 50px; /* Adjust image width as desired */
+    height: 50px; /* Keep aspect ratio */
+    object-fit: contain;
+}
+
+.contact-info-box p a {
+    color: #f0f0f0; /* Match text color */
+    text-decoration: none; /* Remove underline */
+}
