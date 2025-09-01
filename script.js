@@ -35,5 +35,20 @@ document.addEventListener('DOMContentLoaded', () => {
     //         }
     //     });
     // });
+
+    const emailLink = document.getElementById('email-link');
+
+    if (emailLink) {
+        emailLink.addEventListener('click', function(e) {
+            // Simple check for common mobile device indicators
+            const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+
+            if (!isMobile) {
+                e.preventDefault(); // Prevent mailto: on PC
+                window.open('https://mail.google.com/mail/?view=cm&fs=1&to=book@rinsereflect.com', '_blank');
+            }
+            // On mobile, let the default mailto: behavior proceed
+        });
+    }
 });
 
