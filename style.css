@@ -182,8 +182,8 @@ body {
 
 .contact-us small {
     display: block; /* Make small tags block-level to apply margins */
-    font-size: 10px; /* Using px for consistent sizing across devices */
-    font-family: Arial, sans-serif; /* Explicit font stack for consistency */
+    font-size: 12px; /* Slightly increased font size */
+    font-family: Georgia, serif; /* Explicit font stack for consistency */
     line-height: 1.2; /* Explicit line height */
     white-space: nowrap; /* Prevent text wrapping */
     color: #f0f0f0; /* Explicitly set color */
