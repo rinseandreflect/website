@@ -174,16 +174,30 @@ body {
 
 .contact-us h2 {
     font-size: 1.8em; /* Made titles bigger */
-    margin-bottom: 20px; /* Remove bottom margin to reduce vertical space */
+    margin-bottom: 2px; /* Adjusted for a tiny bit bigger space */
     color: #f0f0f0;
     font-family: "Times New Roman", serif;
     font-weight: 400;
 }
 
+.contact-us small {
+    display: block; /* Make small tags block-level to apply margins */
+    font-size: 0.6em; /* Further reduced font size */
+    margin: 0; /* Reset default margin */
+}
+
+.contact-us small:first-of-type {
+    margin-bottom: 5px; /* Small gap between phone and email */
+}
+
+.contact-us small:last-of-type {
+    margin-bottom: 15px; /* Increased space between email and contact info box */
+}
+
 .contact-info-box {
     
     max-width: 800px;
-    margin: 0 auto 20px auto; /* Centered with bottom margin */
+    margin: 0 auto 20px auto; /* Reset top margin and maintain bottom margin for consistency */
     display: flex; /* Make children arrange horizontally */
     justify-content: center; /* Center items horizontally */
     align-items: center; /* Vertically align items */
