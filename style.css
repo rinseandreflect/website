@@ -150,6 +150,7 @@ body {
 }
 
 .price-tier-label {
+    color: #aaa;
     letter-spacing: 0.02em;
 }
 
