@@ -124,16 +124,43 @@ body {
     padding: 30px;
     border-radius: 8px;
     border: 1px solid #333;
-    flex: 1;
-    min-width: 300px;
-    max-width: 45%;
+    flex: 1 1 280px;
+    min-width: 280px;
+    max-width: 32%;
     text-align: left;
+}
+
+.service-category-header {
+    margin-bottom: 20px;
+}
+
+.service-pricing {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 10px;
+    font-size: 0.85em;
+}
+
+.price-tier {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    color: #aaa;
+}
+
+.price-tier-label {
+    letter-spacing: 0.02em;
+}
+
+.price-tier-amount {
+    color: #f0f0f0;
+    line-height: 1;
 }
 
 .service-category h3 {
     color: #f0f0f0; /* Changed to match other text color */
-    margin-top: 0;
-    margin-bottom: 20px;
+    margin: 0;
     font-family: "Times New Roman", serif;
     font-size: 1.8em; /* Made titles bigger */
     font-weight: normal;
@@ -173,7 +200,7 @@ body {
 }
 
 .contact-us h2 {
-    font-size: 1.8em; /* Made titles bigger */
+    font-size: 1.5em;
     margin-bottom: 2px; /* Adjusted for a tiny bit bigger space */
     color: #f0f0f0;
     font-family: "Times New Roman", serif;
@@ -182,7 +209,7 @@ body {
 
 .contact-us small {
     display: block; /* Make small tags block-level to apply margins */
-    font-size: 12px; /* Slightly increased font size */
+    font-size: 12px;
     font-family: Georgia, serif; /* Explicit font stack for consistency */
     line-height: 1.2; /* Explicit line height */
     white-space: nowrap; /* Prevent text wrapping */
@@ -209,14 +236,14 @@ body {
 }
 
 .contact-info-box p {
-    font-size: 1.2em;
-    line-height: 1.8;
+    font-size: 1em;
+    line-height: 1.4;
     margin: 0; /* Remove default paragraph margin to allow flex gap to control spacing */
 }
 
 .contact-info-box p a img {
-    width: 50px; /* Adjust image width as desired */
-    height: 50px; /* Keep aspect ratio */
+    width: 42px;
+    height: 42px;
     object-fit: contain;
 }
 
